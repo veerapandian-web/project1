@@ -39,7 +39,7 @@ header.masthead {
   position: relative;
   overflow: hidden;
   padding-top: calc(7rem + 72px);
-  padding-bottom: 10rem;
+  padding-bottom: 20.3rem;
   background-image: url(../img/map.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -61,7 +61,7 @@ header.masthead .masthead-content .masthead-subheading {
 @media (min-width: 992px) {
   header.masthead {
     padding-top: calc(7rem + 72px);
-    padding-bottom: 10rem;
+    padding-bottom: 14rem;
   }
   header.masthead .masthead-content .masthead-heading {
     font-size: 6rem;

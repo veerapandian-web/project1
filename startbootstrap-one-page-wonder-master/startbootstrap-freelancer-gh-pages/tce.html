@@ -15,37 +15,9 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <style>
-.map {
-  background-color:#ffcba4;
-  color: brown;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 250px;
-  display: inline-block;
-}
-.choose{
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  background-color: #ffcba4;
-  border-radius: 500px;
-}
 
-option:hover {
-    background-color: black;
-opacity:0.8;
-}
 
-.map:hover {
-  background-color: #FF7F50;
-  opacity: 0.5;
-}
 
-</style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -69,6 +41,11 @@ opacity:0.8;
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5 rounded " src="assets/img/tceimg.jpg" alt="" />
+                <style>
+                 header img{
+                  border: 2px solid darkgreen;
+                }
+                </style>
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Thiyagarajar college of engineering</h1>
                 <!-- Icon Divider-->
@@ -94,13 +71,19 @@ opacity:0.8;
                 </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
-                    
+
                     <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="assets/img/inmap.jpg" alt="" />
+                            <style>
+                            .img-fluid {
+                              border:2px solid pink;
+                            }
+                            </style>
+
                         </div>
                     </div>
                 </div>
@@ -118,35 +101,33 @@ opacity:0.8;
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
-                <div class="row ">
-                    <div class="col-lg-4">
-                        <select class="map ">
-                              <div class="down">
+                <div class="row justify-content-center">
+                    <div class="map col-lg-6 ">
+                        <select id="current" class="coral" onchange="pullvalue()">
                                 <option class="choose">current location</option>
-                                <option class="choose">Food court</option>
-                                <option class="choose">Main canteen</option>
+                                <option class="choose">Tce office</option>
+                                 <option class="choose">KM auditorium</option>
                                 <option class="choose">KS auditorium</option>
-                                <option class="choose">EEE computer lab</option>
-                              </div>
-                          </select>
-                     </div>   
-                    </div>
+                                <option class="choose">Power Electronics lab</option>
+                          <option class="choose">Dean cabin</option>
 
-                         <div class="col-lg-4">
-                          <select class="map ">
-                           <div class="down">
+                          </select>
+                     </div>
+                         <div class="maps col-lg-6">
+                          <select id="destination" class="corals" onchange="pullvalue()">
+
                                <option class="choose">destination location</option>
-                               <option class="choose">Main canteen</option>
-                               <option class="choose">IT block</option>
-                               <option class="choose">rajaram cabin</option>
-                               <option class="choose">EEE office</option>
-                                </div>
+                               <option class="choose">EEE library</option>
+                               <option class="choose">EEE Seminar hall</option>
+                               <option class="choose">Rajaram cabin</option>
+                               <option class="choose">V.Saravanan cabin</option>
+                            <option class="choose">Stage</option>
+
                             </select>
                         </div>
-                    
-            </div>
+                      </div>
         </section>
-        
+
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small>Copyright © Your Website 2020</small></div>
@@ -164,7 +145,8 @@ opacity:0.8;
                     </button>
                     <div class="modal-body text-center">
                         <div class="container">
-                            <div class="row justify-content-center">
+                          <div class="pic">
+                            <div class="row  justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
                                     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">interior map</h2>
@@ -176,7 +158,7 @@ opacity:0.8;
                                     </div>
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5"src="assets/img/inmap.jpg" alt="" />
-                                    
+
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -184,6 +166,7 @@ opacity:0.8;
                                 </div>
                             </div>
                         </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -198,11 +181,23 @@ opacity:0.8;
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+        function pullvalue()
+{
+  var x=document.getElementById('current').value;
+  var y=document.getElementById('destination').value;
+  if(x=='Tce office' & y=='EEE library' )
+    location.replace('https://www.facebook.com');
+  else if(x=='KS auditorium' & y=='Rajaram cabin')
+    location.replace('https://www.google.com');
+  else if(x=='KM auditorium' & y=='EEE Seminar hall')
+    location.replace('https://www.facebook.com');
+  else if(x=='Power Electronics lab' & y=='V.Saravanan cabin')
+    location.replace('https://www.telegram.com');
+  else if(x=='Dean cabin' &  y=='Stage')
+    location.replace('https://www.facebook.com');
+}
+</script>
     </body>
+
 </html>
-
-
-
-
-
-

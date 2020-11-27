@@ -144,7 +144,7 @@ header.masthead .masthead-content .masthead-subheading {
 /* List */
 .ChoosePlace ul {
   margin: 0 auto;
-  counter-reset: index;  
+  counter-reset: index;
   padding: 0;
   max-width: 300px;
 }
@@ -152,7 +152,7 @@ header.masthead .masthead-content .masthead-subheading {
 /* List element */
 .ChoosePlace li {
   font-size: 1.1rem;
-  counter-increment: index; 
+  counter-increment: index;
   display: flex;
   align-items: center;
   padding: 12px 0;
@@ -251,5 +251,3 @@ header.masthead .masthead-content .masthead-subheading {
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
 }
-
-
